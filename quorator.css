@@ -1,0 +1,63 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    width: 700px;
+    min-width: 700px;
+}
+ 
+#container {
+    width: 660px;
+    margin: 0 0 0 20px; /* top right bottom left */
+    padding: 0;
+ }
+ 
+#container h1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    border-bottom: #c00 solid 3px;
+}
+
+#container #col1 {
+    width: 150px;
+    float: left;
+}
+#container #col2outer {
+    width: 490px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#col2outer #col2 {
+    width: 150px;
+    float: left;
+}
+ 
+#col2outer #col3outer {
+    width: 320px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#col3outer #col3 {
+    width: 150px;
+    float: left;
+}
+
+#col3outer #col4 {
+    width: 150px;
+    float: right;
+}
+
+#container #footer {
+    float: left;
+    width: 660px;
+    border-top: #c00 solid 3px;
+}
