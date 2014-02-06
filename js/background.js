@@ -72,6 +72,8 @@
 			inbox = quora_json.inbox;
 			link = quora_json.link;
 			notifs = quora_json.notifs;
+            
+            chrome.browserAction.setBadgeText({'text': String(notifs['unseen_count'])});
 			
 			name = quora_json.name;
 			
@@ -82,7 +84,10 @@
             other = "";
             
 			for(var i=0; i<unseen.length; i++) {
-				if(isVoteUp(unseen[i])){
+                
+                unseen[i] = addTargetAttribute(unseen[i]);
+				
+                if(isVoteUp(unseen[i])){
 					voteUp = voteUp + unseen[i] + "<br/><br/>";
 				}
 				else if(isAnswered(unseen[i])){
@@ -92,13 +97,19 @@
 					following = following + unseen[i] + "<br/><br/>";
 				}
 				else{
-					other = other + unseen[i] + "<br/>";
+					other = other + unseen[i] + "<br/><br/>";
 				}
 			}
             
             console.log("Quorator: Classification done!");
 			classification_done = true;
 		}
+    }
+    
+    function addTargetAttribute(str) {
+        var re = /<a /gi;
+        
+        return str.replace(re, '<a target="_blank"');
     }
     
     function isFollowing(message) {
@@ -134,7 +145,7 @@
         
 		if(request['notifs'])
 		{
-            var response = { 'quora_json': quora_json, 'inbox': inbox, 'link': link, 'voteUp': voteUp, 'answered': answered, 'following': following, 'other': other };
+            var response = { 'inbox': inbox, 'link': link, 'name': name, 'notifs': notifs, 'voteUp': voteUp, 'answered': answered, 'following': following, 'other': other };
 			sendResponse(response);
 		}
 	});

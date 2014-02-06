@@ -20,7 +20,7 @@
 	function render(response) {
 		
 		user = document.getElementById("user");
-        user.innerText = name;
+        user.innerText = response['name'];
 		
         votedup = document.getElementById("votedup"); 
 		answered = document.getElementById("answered");

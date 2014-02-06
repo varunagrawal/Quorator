@@ -5,17 +5,30 @@ html, body {
 }
 
 body {
-    width: 700px;
-    min-width: 700px;
+    width: 800px;
+    min-width: 800px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
 }
- 
+
+a:link {
+    color: #000000;
+}
+a:visited {
+    color: #000000;
+}
+
+#user {
+    margin-bottom: 5px;
+}
+
 #container {
-    width: 660px;
+    width: 760px;
     margin: 0 0 0 20px; /* top right bottom left */
     padding: 0;
  }
  
-#container h1 {
+#container #header {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -23,41 +36,58 @@ body {
     border-bottom: #c00 solid 3px;
 }
 
-#container #col1 {
-    width: 150px;
+#container #footer {
     float: left;
+    width: 760px;
+    border-top: #c00 solid 3px;
+}
+
+#container #title {
+    display: inline;
+    float: left;
+    margin: 0px;
+}
+
+#container #createdby {
+    display: inline;
+    float: right;
+    margin: 0px;
+}
+
+.column {
+    width: 170px;
+    padding: 15px 10px;
+}
+
+#container #col1 {
+    float: left;
+    background-color: #fff689;
 }
 #container #col2outer {
-    width: 490px;
+    width: 570px;
     float: right;
     margin: 0;
     padding: 0;
 }
 
 #col2outer #col2 {
-    width: 150px;
     float: left;
+    background-color: #ffa7a7;
 }
  
 #col2outer #col3outer {
-    width: 320px;
+    width: 380px;
     float: right;
     margin: 0;
     padding: 0;
 }
 
 #col3outer #col3 {
-    width: 150px;
     float: left;
+    background-color: #89ffa2;
 }
 
 #col3outer #col4 {
-    width: 150px;
     float: right;
-}
-
-#container #footer {
-    float: left;
-    width: 660px;
-    border-top: #c00 solid 3px;
+    background-color: #b2f0f9;
 }
