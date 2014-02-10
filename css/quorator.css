@@ -5,9 +5,11 @@ html, body {
 }
 
 body {
-    width: 800px;
-    min-width: 800px;
-    font-family: Tahoma, Geneva, sans-serif;
+    width: 780px;
+    min-width: 780px;
+    height: 600px;
+    /*font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;*/
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 14px;
 }
 
@@ -24,7 +26,7 @@ a:visited {
 
 #container {
     width: 760px;
-    margin: 0 0 0 20px; /* top right bottom left */
+    margin: 0 10px 0 10px; /* top right bottom left */
     padding: 0;
  }
  
@@ -51,17 +53,22 @@ a:visited {
 #container #createdby {
     display: inline;
     float: right;
-    margin: 0px;
+    margin: 10px 20px 0px 0px; /* top right bottom left */
+}
+
+h4 {
+    margin-top: 0px;
 }
 
 .column {
     width: 170px;
-    padding: 15px 10px;
+    padding: 0px 10px 15px 10px;
 }
 
 #container #col1 {
     float: left;
-    background-color: #fff689;
+    background: linear-gradient(#fff689, #ffffff);
+    /*background-color: #fff689;*/
 }
 #container #col2outer {
     width: 570px;
@@ -72,7 +79,8 @@ a:visited {
 
 #col2outer #col2 {
     float: left;
-    background-color: #ffa7a7;
+    background: linear-gradient(#ffa7a7, #ffffff);
+    /*background-color: #ffa7a7;*/
 }
  
 #col2outer #col3outer {
@@ -84,10 +92,12 @@ a:visited {
 
 #col3outer #col3 {
     float: left;
-    background-color: #89ffa2;
+    background: linear-gradient(#89ffa2, #ffffff);
+    /*background-color: #89ffa2;*/
 }
 
 #col3outer #col4 {
     float: right;
-    background-color: #b2f0f9;
+    background: linear-gradient(#b2f0f9, #ffffff);
+    /*background-color: #b2f0f9;*/
 }

@@ -31,7 +31,7 @@
 		console.log("Quorator: Initializing background page");
 		initialized = true;
 		timer_on = true;
-		var timer = setTimeout(startPolling, POLLING_FREQUENCY);
+		startPolling();
 		console.log("Quorator: Background page initialized successfully");
 	}
     
@@ -115,6 +115,9 @@
     function isFollowing(message) {
 		var re = /now following you/i;
 		
+        var follow = /Follow/;
+        message.replace(follow, '<b>Follow</b>');
+        
 		return re.test(message);
 	}
 	
@@ -125,9 +128,11 @@
 	}
 	
 	function isAnswered(message) {
-		var re = /added an answer/i;
-		
-		return re.test(message);
+		var wroteAnswer = /wrote an answer/i;
+		var asked2answer = /asked you to answer/i;
+        
+        if(wroteAnswer.test(message) || asked2answer.test(message))
+            return true;
 	}
     
     
