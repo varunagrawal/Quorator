@@ -62,7 +62,7 @@
     
     function classify() {
         
-        if(xhr.readyState != 4)
+        if(xhr.readyState != 4) 
 			return;
 			
 		if(xhr.readyState == 4 && xhr.status == 200)
@@ -94,7 +94,12 @@
 					answered = answered + unseen[i] + "<br/><br/>";
 				}
 				else if(isFollowing(unseen[i])){
-					following = following + unseen[i] + "<br/><br/>";
+                
+                    /* Make the Follow link bold */
+                    var follow = />Follow</;
+                    var follow_bold = '><b>Follow</b><'
+                    
+                    following = following + unseen[i].replace(follow, follow_bold) + "<br/><br/>";
 				}
 				else{
 					other = other + unseen[i] + "<br/><br/>";
@@ -114,9 +119,6 @@
     
     function isFollowing(message) {
 		var re = /now following you/i;
-		
-        var follow = /Follow/;
-        message.replace(follow, '<b>Follow</b>');
         
 		return re.test(message);
 	}

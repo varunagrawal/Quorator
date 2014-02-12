@@ -20,8 +20,15 @@
 	function render(response) {
 		
 		user = document.getElementById("user");
+        user.setAttribute("href", response['link']);
         user.innerText = response['name'];
 		
+        notifications = document.getElementById("notifications");
+        notifications.innerText = " | Notifications: " + response['notifs']['unseen_count'];
+        
+        messages = document.getElementById("messages");
+        messages.innerText = " | Messages: " + response['inbox']['unread_count'];
+        
         votedup = document.getElementById("votedup"); 
 		answered = document.getElementById("answered");
 		following = document.getElementById("following");
