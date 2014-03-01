@@ -97,9 +97,9 @@
                 
                     /* Make the Follow link bold */
                     var follow = />Follow</;
-                    var follow_bold = '><b>Follow</b><'
+                    var follow_highlight = '>| Follow | <'
                     
-                    following = following + unseen[i].replace(follow, follow_bold) + "<br/><br/>";
+                    following = following + unseen[i].replace(follow, follow_highlight) + "<br/><br/>";
 				}
 				else{
 					other = other + unseen[i] + "<br/><br/>";
