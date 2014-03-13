@@ -76,7 +76,7 @@
 			link = quora_json.link;
 			notifs = quora_json.notifs;
             
-            chrome.browserAction.setBadgeText({'text': String(notifs['unseen_count'])});
+            chrome.browserAction.setBadgeText({'text': String(notifs['unseen_count'] + inbox['unread_count'])});
 			
 			name = quora_json.name;
 			
