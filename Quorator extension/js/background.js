@@ -35,12 +35,14 @@
 		console.log("Quorator: Background page initialized successfully");
 	}
     
+
     function startPolling() {
         getData();
         
         setTimeout(startPolling, POLLING_FREQUENCY);
     }
     
+
 	/* Retrieve all the Data from Quora */
 	function getData() {
 		try
@@ -59,6 +61,7 @@
 		}
 		
 	}
+
     
     function classify() {
         
@@ -86,7 +89,10 @@
 			for(var i=0; i<unseen.length; i++) {
                 
                 unseen[i] = addTargetAttribute(unseen[i]);
-				
+
+				unseen[i] = boldLinks(unseen[i]);
+
+
                 if(isVoteUp(unseen[i])){
 					voteUp = voteUp + unseen[i] + "<br/><br/>";
 				}
@@ -96,7 +102,7 @@
 				else if(isFollowing(unseen[i])){
                 
                     /* Make the Follow link bold */
-                    var follow = />Follow</;
+                    var follow = />Follow[0-9]*</;
                     var follow_highlight = '>| Follow | <'
                     
                     following = following + unseen[i].replace(follow, follow_highlight) + "<br/><br/>";
@@ -117,6 +123,18 @@
         return str.replace(re, '<a target="_blank"');
     }
     
+	function boldLinks(str) {
+		var re = /<a.*?>.*?<\/a>/gi;
+		var matches = str.match(re);
+
+		for(var i=0; i<matches.length; i++) {
+			str = str.replace(matches[i], "<b>" + matches[i] + "</b>");
+		}
+		
+		return str;
+		
+	}
+
     function isFollowing(message) {
 		var re = /now following you/i;
         
