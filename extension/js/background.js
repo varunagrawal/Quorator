@@ -33,8 +33,8 @@
 		startPolling();
 		console.log("Quorator: Background page initialized successfully");
 	}
-
-    function startPolling() {
+	
+	function startPolling() {
 		getData();
 		
 		setTimeout(startPolling, POLLING_FREQUENCY);
@@ -59,9 +59,9 @@
 		}
 		
 	}
-
-    function classify() {
-        
+	
+	function classify() {
+		
 		if(xhr.readyState != 4) 
 			return;
 			
@@ -107,7 +107,7 @@
 					other = other + unseen[i] + "<br/><br/>";
 				}
 			}
-            
+			
 			console.log("Quorator: Classification done!");
 			classification_done = true;
 		}
