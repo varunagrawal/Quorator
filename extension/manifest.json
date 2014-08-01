@@ -4,7 +4,7 @@
 	"name": "Quorator",
     "short_name": "Quorator",
 	"description": "Smart Quora Feed Display",
-	"version": "1.7.3",
+	"version": "1.7.4",
 	
     "icons": {
         "16" : "images/icon16.png",

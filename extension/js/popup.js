@@ -19,7 +19,7 @@
 	/* Render the popup */
 	function render(response) {
 		
-		user = document.getElementById("user");
+		user = document.getElementById("user_link");
 		user.setAttribute("href", response['link']);
 		user.innerText = response['name'];
 
