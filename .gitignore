@@ -1,3 +1,6 @@
 extension/Quorator.zip
 private/Quorator.crx
 private/Quorator.pem
+**/*.zip
+**/*.crx
+**/*.pem
